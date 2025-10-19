@@ -1,0 +1,30 @@
+<div class="content">
+	<p>Voici les jeux vidéo qui sortent dans les 7 prochains jours :</p>
+
+	{% if games|length > 0 %}
+		{% for game in games %}
+			<div class="game">
+				<div class="game-title">{{ game.title }}</div>
+				<div class="game-date">
+					📅 Sortie le
+					{{ game.releaseDate|date('d/m/Y') }}
+				</div>
+				{% if game.description %}
+					<div class="game-description">{{ game.description }}</div>
+				{% endif %}
+
+				{% if game.editor %}
+					<div class="game-editor">Éditeur : {{ game.editor.name }}</div>
+				{% endif %}
+
+				{% if game.category %}
+					<div class="game-category">Catégorie : {{ game.category.name }}</div>
+				{% endif %}
+			</div>
+		{% endfor %}
+	{% else %}
+		<div class="no-games">
+			<p>Aucun jeu prévu pour les 7 prochains jours.</p>
+		</div>
+	{% endif %}
+</div>

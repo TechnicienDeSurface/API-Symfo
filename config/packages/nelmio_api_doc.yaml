@@ -1,0 +1,20 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Mon API
+            description: Cette Api est une masterclass
+            version: 1.0.0
+        openapi: 3.1.0
+        components:
+            securitySchemes:
+                Bearer:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+                    description: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjA1NTYzMjQsImV4cCI6MTc2MDU1OTkyNCwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImFkbWluQ2hhcmxlSExlQmdAZXhhbXBsZS5jb20ifQ.Dd4dZ5mxrzUQHFF4CI6j9Qr5m62LeewUdPB1gN2QcULkd3KexSwNQ-q-QZRqRr6zRLWTA9oqEKuZorSqJ-cbMZM3W3fvWQvW7IiOi15HEyXFCBVtkun-pH5BB32MZq8oz4PewUUQ49mr2SYpmTQkoQCain8ggwvGVgv665Ip4ppcweVe4jyQqdh0sVn3Zc4ycYPHAlcrXNp_UdbmUngiCEson2sn0IKiMWMrK5kYn6QW70gyuKYdNc1y1BJkn4swDavL68LgqyqxqpRmYtjKOnZ_OhC1GhIfdoygHUkQuWVmMzKtfI05osWCUFg6ip1TOXeS88w8CBCT5P-Cwel0DQ'
+        security:
+            - Bearer: []
+    areas:
+        default:
+            path_patterns:
+                - ^/api(?!/doc$)
